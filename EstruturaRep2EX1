@@ -1,0 +1,36 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		var pontuacao = 0;
+		while(pontuacao < 10)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				var numero1 = new Random().Next(1,10);
+				var numero2 = new Random().Next(1,10);
+
+				Console.WriteLine(numero1 + " x " + numero2 + " = ");
+				var resposta = Convert.ToInt32(Console.ReadLine());
+
+				if (resposta == numero1 * numero2)
+				{
+					Console.WriteLine("Resposta Certa.");
+					pontuacao++;
+				}
+				else
+				{
+					Console.Write($"Errado. O certo seria {numero1 * numero2}");
+				}
+			}
+			Console.WriteLine("Sua pontuação é de: " + pontuacao + "/10");
+
+			if(pontuacao == 10)
+				Console.Write("Você obteve a pontuação necessária.");
+			else
+				Console.Write("Infelizmente não obteve o suficiente, tente novamente.");
+		}
+	}
+}
