@@ -1,0 +1,30 @@
+using System;
+
+namespace Aula1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var contador = 0;
+            Console.Write("Digite quantas semanas foram estudadas. ");
+            var semanasD = Convert.ToDecimal(Console.ReadLine());
+            Console.Write("Quantos dias você estudou? ");
+            var dias = Convert.ToDecimal(Console.ReadLine());
+
+            for (int semanas = 1; semanas <= semanasD; semanas++)
+            {
+                Console.Write($"Semana: {semanas} ");
+                for (int dia = 1; dia <= dias; dia++)
+                {
+                    Console.Write($"Dia: {dia} ");
+                    contador++;
+                }
+                Console.WriteLine("");
+
+            }
+            Console.WriteLine($"O número de dias estudados é {contador} ");
+     
+        }
+    }
+}
