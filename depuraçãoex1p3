@@ -1,0 +1,58 @@
+using System;
+
+namespace debug
+{
+    class Program
+    {
+        static void Main()
+        {
+            double sSal = 0;
+            int qtp = 0;
+            int qtdP100 = 0;
+            int qtdF = 0;
+            double mSal = 0;
+
+            double s = 0;
+
+            while (s >= 0)
+            {
+                Console.Write("Salário: ");
+                s = Convert.ToDouble(Console.ReadLine());
+
+                if (s >= 0)
+                {
+                    Console.Write("Quantidade de filhos: ");
+                    var f = Convert.ToInt32(Console.ReadLine());
+
+                    sSal += s;
+                    qtdF += f;
+                    qtp++;
+
+                    if (s > s)
+                    {
+                        mSal = s;
+                    }
+
+                    if (s <= 100)
+                    {
+                        qtdP100++;
+                    }
+
+                }
+            }
+
+            var mediaSalarioPopulacao = sSal / qtp;
+            Console.WriteLine("Média salarial da população: R$" + mediaSalarioPopulacao);
+
+            // faz cast para double para pegar número quebrado na divisão.
+            var mediaNumeroFilhos = (double)qtdF / qtp;
+
+            Console.WriteLine("Média número de filhos: " + mediaNumeroFilhos);
+
+            Console.WriteLine("Maior salário: " + mSal);
+
+            var percentualPessoasComSalarioAte100 = (qtdP100 * 100) / qtp;
+            Console.WriteLine("Percentual de pessoas com salário até R$100,00: " + percentualPessoasComSalarioAte100 + "%");
+        }
+    }
+}
