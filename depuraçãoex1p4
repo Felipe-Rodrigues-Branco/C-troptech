@@ -1,0 +1,21 @@
+using System;
+
+namespace debug
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Digite a medida em cm da base do triângulo: ");
+            var bt = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Digite a medida em cm da altura do triângulo: ");
+            var at = Convert.ToDouble(Console.ReadLine());
+
+            var s = (bt * at) / 2;
+
+            Console.WriteLine("A área do triângulo é: " + a);
+        }
+    }
+}
