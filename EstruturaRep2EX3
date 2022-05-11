@@ -1,0 +1,58 @@
+using System;
+
+namespace estruturaR2Ex2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int tab = 10;
+
+
+
+            for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"1x{i} =  "+(1*i) );
+            }
+
+                for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"2x{i} =  "+(2*i) );
+
+            }
+            for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"3x{i} =  "+(3*i) );
+            }
+            for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"4x{i} =  "+(4*i) );
+            }
+            for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"5x{i} =  "+(5*i) );
+            }
+            for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"6x{i} =  "+(6*i) );
+            }
+            for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"7x{i} =  "+(7*i) );
+            }
+            for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"8x{i} =  "+(8*i) );
+            }
+            for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"9x{i} =  "+(9*i) );
+            }
+            for (int i = 1; i <= tab; i++)
+            {
+                Console.WriteLine($"10x{i} =  "+(10*i) );
+            }
+            
+        }
+    }
+}
