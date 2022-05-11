@@ -30,7 +30,7 @@ public class Program
 			if(pontuacao == 10)
 				Console.Write("Você obteve a pontuação necessária.");
 			else
-				Console.Write("Infelizmente não obteve o suficiente, tente novamente.");
+				Console.WriteLine("Infelizmente não obteve o suficiente, tente novamente.");
 		}
 	}
 }
