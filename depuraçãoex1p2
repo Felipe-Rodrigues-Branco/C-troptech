@@ -1,0 +1,31 @@
+using System;
+
+namespace debug
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Descubra a tabuada!");
+            Console.Write("Qual tabuada você gostaria de consultar (1 a 10): ");
+            var t = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Qual é o número de inicio: ");
+            var in = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Qual é o número de fim: ");
+            var f = Convert.ToInt32(Console.ReadLine());
+
+            if (t > 10 || t < 1)
+            {
+                Console.WriteLine("Valor inválido, tente novamente.");
+                return;
+            }
+
+            for (var i =in; i <= f; i++)
+            {
+                Console.WriteLine(t + " x " + i + " = " + i * t);
+            }
+        }
+    }
+}
