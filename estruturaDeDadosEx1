@@ -1,0 +1,48 @@
+using System;
+
+namespace estruturaDeDados
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tamanho = 0;
+            var maiorValor = 0;
+            var posicao = 0;
+
+
+
+            //entrada
+            Console.WriteLine("Digite o tamanho do vetor: ");
+            tamanho = Convert.ToInt32(Console.ReadLine());
+
+            //processamento
+            int[] vetor = new int[tamanho];
+            for (int i = 0; i < tamanho; i++)
+            {
+                Console.Write("--> ");
+                vetor[i] = Convert.ToInt32(Console.ReadLine());
+
+                if (vetor[i] > maiorValor)
+                {
+                    maiorValor = vetor[i];
+                    posicao = i;
+                }
+
+
+            }
+            for (int i = 0; i < tamanho; i++)
+            {
+                Console.WriteLine($"Vetor[{i}] " + vetor[i]);
+            }
+
+
+            //saida
+            Console.WriteLine($"O maior valor é: {maiorValor}");
+            Console.WriteLine($"Sua posição é {posicao}");
+
+
+
+        }
+    }
+}
