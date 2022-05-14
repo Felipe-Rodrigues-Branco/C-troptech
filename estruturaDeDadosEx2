@@ -1,0 +1,46 @@
+using System;
+
+namespace estruturaDeDados
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tamanho = 0;
+            var contPares = 0;
+
+
+
+            //entrada
+            Console.WriteLine("Digite o tamanho do vetor: ");
+            tamanho = Convert.ToInt32(Console.ReadLine());
+
+            
+            int[] vetor = new int[tamanho];
+            Console.WriteLine("Digite os números do vetor ");
+            for (int i = 0; i < tamanho; i++)
+
+                vetor[i] = Convert.ToInt32(Console.ReadLine());
+
+            //processamento
+            Console.WriteLine($"Números pares são:");
+            for (int i = 0; i < tamanho; i++)
+            {
+                if (vetor[i] % 2 == 0)
+                {
+                    Console.Write($"{vetor[i]}   ");
+                    contPares++;
+
+                }
+            }
+
+            //saida
+
+            Console.WriteLine($"\nA quantidade é {contPares}");
+            
+
+
+
+        }
+    }
+}
