@@ -1,0 +1,57 @@
+using System;
+
+namespace estruturaDeDados
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tamanho = 0;
+            int somaV = 0;
+
+
+            Console.WriteLine("Digite o tamanho do vetor: ");
+            tamanho = Convert.ToInt32(Console.ReadLine());
+
+
+            int[] vetor = new int[tamanho];
+            Console.WriteLine("Digite os números do vetor: ");
+            for (int i = 0; i < tamanho; i++)
+
+
+                vetor[i] = Convert.ToInt32(Console.ReadLine());
+
+
+            for (int i = 0; i < tamanho; i++)
+                somaV += vetor[i];
+
+            int media = somaV / tamanho;
+            Console.WriteLine($"A média aritimética é: {media}");
+
+            Console.WriteLine("Os números abaixo da média são: ");
+            for (int i = 0; i < tamanho; i++)
+                if (media > vetor[i])
+                {
+                    Console.Write($"{vetor[i]}");
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
+
