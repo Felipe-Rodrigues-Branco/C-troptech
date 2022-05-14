@@ -1,0 +1,60 @@
+using System;
+
+namespace estruturaDeDados
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tamanho = 0;
+         
+
+
+
+            //entrada
+            Console.WriteLine("Digite o tamanho do vetor: ");
+            tamanho = Convert.ToInt32(Console.ReadLine());
+
+
+            int[] vetorA = new int[tamanho];
+            Console.WriteLine("Digite os números do vetor A ");
+            for (int i = 0; i < tamanho; i++)
+
+
+                vetorA[i] = Convert.ToInt32(Console.ReadLine());
+
+
+
+            int[] vetorB = new int[tamanho];
+            Console.WriteLine("Digite os números do vetor B ");
+            for (int i = 0; i < tamanho; i++)
+
+                vetorB[i] = Convert.ToInt32(Console.ReadLine());
+
+
+
+            //processamento
+            int[] vetorC = new int[tamanho];
+            for (int i = 0; i < tamanho; i++)
+
+                vetorC[i] = vetorB[i] + vetorA[i];
+
+
+
+
+            //saida
+
+            Console.WriteLine("Os valores de vetor C são: ");
+            for (int i = 0; i < tamanho; i++)
+            Console.Write($"{vetorC[i]} ");
+
+            
+                
+            
+
+
+
+
+        }
+    }
+}
