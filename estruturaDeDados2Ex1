@@ -1,0 +1,38 @@
+using System;
+
+namespace estruturadedados2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int contLetraM = 0;
+            int contLetraMin = 0;
+            int contNum = 0;
+            int contCaracEsp = 0;
+
+            Console.Write("Digite uma senha ");
+            string senha = Console.ReadLine();
+
+            for (int i = 0; i < senha.length; i++)
+            {
+                int dec = senha[i];
+                if (dec >= 65 && dec <= 90)
+                    contLetraM++;
+                else if (dec >= 97 && dec <= 122)
+                    contLetraMin++;
+                else if (dec >= 48 && dec <= 57)
+                    contNum++;
+                else
+                    contCaracEsp++;
+            }
+
+            Console.WriteLine($"Letras maiúsculas: {contLetraM}");
+            Console.WriteLine($"Letras minúsculas: {contLetraMin}");
+            Console.WriteLine($"Números: {contNum}");
+            Console.WriteLine($"Caracteres especiais: {contCaracEsp}");
+
+
+        }
+    }
+}
