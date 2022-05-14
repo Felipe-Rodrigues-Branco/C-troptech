@@ -1,0 +1,55 @@
+using System;
+
+namespace estruturadedados2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Digite o número de trabalhadores ");
+            int tamanho = Convert.ToInt32(Console.ReadLine());
+            string[] nome = new string[tamanho];
+            int[] idade = new int[tamanho];
+            int[] tempo = new int[tamanho];
+            Boolean[] aposentadoria = new Boolean[tamanho];
+            for (int i = 0; i < tamanho; i++)
+            {
+
+                Console.Write("Digite seu nome: ");
+                nome[i] = Console.ReadLine();
+                Console.Write("Digite sua idade: ");
+                idade[i] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Digite o seu tempo de serviço: ");
+                tempo[i] = Convert.ToInt32(Console.ReadLine());
+
+
+
+
+
+                if ((idade[i] >= 65 || tempo[i] >= 30) || (idade[i] == 60 && tempo[i] >= 25))
+                {
+                    aposentadoria[i] = true;
+                }
+                else
+                {
+                    aposentadoria[i] = false;
+                }
+
+
+
+
+                Console.Write("Nome            Idade            Tempo            Situação\n");
+                Console.WriteLine("------------------------------------------------------------ ");
+                Console.WriteLine($"{nome[i]}               {idade[i]}             {tempo[i]}  anos          {aposentadoria[i]}");
+
+
+
+
+
+
+
+
+            }
+        }
+    }
+}
