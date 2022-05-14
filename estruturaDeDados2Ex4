@@ -1,0 +1,22 @@
+using System;
+
+namespace estruturadedados2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var contador = 0;
+            string[] palavras = { "olá", "bem-vindo", "programador" };
+            Console.WriteLine("Digite uma frase: ");
+            string frase = Console.ReadLine();
+
+            for (int i = 0; i < palavras.Length; i++)
+            {
+
+                string palavra = palavras[i];
+                if (frase.Contains(palavra))
+                    contador++;
+            }
+            Console.WriteLine($"{contador} palavras");
+
