@@ -1,0 +1,47 @@
+using System;
+
+namespace estruturadedados2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Digite quantos produtos quer: ");
+            int tamanho = Convert.ToInt32(Console.ReadLine());
+
+
+            string[] nome = new string[tamanho];
+            decimal[] preco = new decimal[tamanho];
+            decimal[] resultado1 = new decimal[tamanho];
+            decimal[] resultado2 = new decimal[tamanho];
+            decimal[] resultado3 = new decimal[tamanho];
+            decimal[] resultado4 = new decimal[tamanho];
+
+
+            for (int i = 0; i < tamanho; i++)
+            {
+                Console.Write("Digite o nome do produto: ");
+                nome[i] = Console.ReadLine();
+                Console.Write("Digite o preço do produto: ");
+                preco[i] = decimal.Parse(Console.ReadLine());
+
+                resultado1[i] = preco[i] - ((preco[i] * 10) / 100);
+
+                resultado2[i] = preco[i] - ((preco[i] * 5) / 100);
+
+                resultado3[i] = preco[i] / 2;
+
+                resultado4[i] = preco[i] / ((preco[i] * 10) / 100);
+
+
+            }
+            Console.WriteLine("Produto               Preço               Opção 1               Opção 2                Opção 3               Opção 4");
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
+            for (int i = 0; i < tamanho; i++)
+            {
+                Console.WriteLine($"{nome[i]}              {preco[i]}                     {resultado1[i]}                 {resultado2[i]}                  {resultado3[i]}                    {resultado4[i]} ");
+            }
+
+        }
+    }
+}
