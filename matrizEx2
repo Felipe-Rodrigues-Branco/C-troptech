@@ -1,0 +1,55 @@
+using System;
+
+namespace estruturadedados2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[,] valores = new int[3, 6];
+            int somaColunasImpares = 0;
+            int somaColuna1e3 = 0;
+            for (int linha = 0; linha < 3; linha++)
+            {
+                for (int coluna = 0; coluna < 6; coluna++)
+                {
+                    Console.Write(string.Format("Digite um número: ", linha, coluna));
+                    valores[linha, coluna] = int.Parse(Console.ReadLine());
+                }
+
+            }
+            for (int linhaPreenchida = 0; linhaPreenchida < 3; linhaPreenchida++)
+            {
+                for (int colunaPreenchida = 0; colunaPreenchida < 6; colunaPreenchida++)
+                {
+                    if (colunaPreenchida % 2 != 0)
+                    {
+                        somaColunasImpares += valores[linhaPreenchida, colunaPreenchida];
+                    }
+                    if (colunaPreenchida == 1 || colunaPreenchida == 3)
+                    {
+                        somaColuna1e3 += valores[linhaPreenchida, colunaPreenchida];
+                    }
+                    valores[0, 5] = valores[0, 0] + valores[0, 2];
+                    valores[1, 5] = valores[1, 0] + valores[1, 2];
+                    valores[2, 5] = valores[2, 0] + valores[2, 2];
+                }
+            }
+
+            for (int linhaAl = 0; linhaAl < 3; linhaAl++)
+            {
+                for (int colunaAl = 0; colunaAl < 6; colunaAl++)
+                {
+                    Console.WriteLine(string.Format("Coluna: {0} Linha:{1} Valor: {2}", colunaAl, linhaAl, valores[linhaAl, colunaAl]));
+                }
+            }
+            Console.WriteLine("A soma das colunas impares é: " + somaColunasImpares);
+
+            Console.WriteLine("A média das colunas 1 e 3 é: " + somaColuna1e3 / 6);
+
+
+
+        }
+    }
+}
