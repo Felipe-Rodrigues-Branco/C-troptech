@@ -47,7 +47,7 @@ namespace estruturadedados2
                 {
                     classs[i] = "Utensílios domésticos";
                 }
-                if (codClass[i] > 10)
+                if (codClass[i] > 10 || codClass[i] < 0)
                 {
                     classs[i] = "Código inválido";
                 }
