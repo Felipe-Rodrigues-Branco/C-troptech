@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+
+namespace estruturadedados2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var lista = new LinkedList<string>();
+
+            lista.AddLast("Carlos");
+            lista.AddLast("Felipe");
+            lista.AddLast("Luan");
+            lista.AddLast("Gabriel");
+            lista.AddLast("Osnildo");
+
+            lista.RemoveFirst();
+            lista.RemoveLast();
+
+            Console.WriteLine($"Total de nomes: {lista.Count}");
+
+            for (var node = lista.First; node != null; node = node.Next)
+            {
+                Console.WriteLine(node.Value);
+
+
+
+
+
+            }
+        }
+    }
+}
