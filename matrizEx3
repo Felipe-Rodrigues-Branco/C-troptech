@@ -1,0 +1,35 @@
+using System;
+
+namespace estruturadedados2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] valores1 = new int[4, 4];
+            int[,] valores2 = new int[4, 4];
+            int[,] valoresSoma = new int[4, 4];
+            for (int linha = 0; linha < 4; linha++)
+            {
+                for (int coluna = 0; coluna < 4; coluna++)
+                {
+                    Console.Write(string.Format("Digite um número para a matriz A: ", linha, coluna));
+                    valores1[linha, coluna] = int.Parse(Console.ReadLine());
+                    Console.Write(string.Format("Digite um número para a matriz B: ", linha, coluna));
+                    valores2[linha, coluna] = int.Parse(Console.ReadLine());
+                }
+
+            }
+            for (int linhaPreenchida = 0; linhaPreenchida < 4; linhaPreenchida++)
+            {
+                for (int colunaPreenchida = 0; colunaPreenchida < 4; colunaPreenchida++)
+                {
+                    valoresSoma[linhaPreenchida, colunaPreenchida] = valores1[linhaPreenchida, colunaPreenchida] + valores2[linhaPreenchida, colunaPreenchida];
+                    Console.WriteLine(string.Format("{0} + {1} = {2}", valores1[linhaPreenchida, colunaPreenchida], valores2[linhaPreenchida, colunaPreenchida], valoresSoma[linhaPreenchida, colunaPreenchida]));
+                }
+            }
+
+
+        }
+    }
+}
