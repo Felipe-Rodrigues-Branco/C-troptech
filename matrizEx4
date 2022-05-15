@@ -1,0 +1,42 @@
+using System;
+
+namespace estruturadedados2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] valores = new int[4, 4];
+            int maiorValor = 0;
+            int menorValor = 200000000;
+
+            for (int linha = 0; linha < 4; linha++)
+            {
+                for (int coluna = 0; coluna < 4; coluna++)
+                {
+                    Console.Write(string.Format("Digite um número  ", linha, coluna));
+                    valores[linha, coluna] = int.Parse(Console.ReadLine());
+
+                }
+
+            }
+            for (int linhaPreenchida = 0; linhaPreenchida < 4; linhaPreenchida++)
+            {
+                for (int colunaPreenchida = 0; colunaPreenchida < 4; colunaPreenchida++)
+                {
+                    if (maiorValor < valores[linhaPreenchida, colunaPreenchida])
+                    {
+                        maiorValor = valores[linhaPreenchida, colunaPreenchida];
+                    }
+                    if (valores[linhaPreenchida, colunaPreenchida] < menorValor)
+                    {
+                        menorValor = valores[linhaPreenchida, colunaPreenchida];
+                    }
+
+                }
+            }
+            Console.WriteLine(string.Format("O maior valor na matriz é: {0} e o Menor é: {1}", maiorValor, menorValor));
+
+        }
+    }
+}
