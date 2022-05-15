@@ -1,0 +1,126 @@
+using System;
+using System.Collections;
+
+public class Program
+{
+    public static void Main()
+    {
+        Queue fila = new Queue();
+        string[,] jogoVelha = new string[3, 3];
+        var inicio = true;
+        var pergunta = true;
+        Console.Write("XOXOXOXOXXOXOOX-JOGO DA VELHA-XOXOXOXOXXOXOOX\n");
+        Console.Write("                                                 \n");
+        Console.Write("                                                 \n");
+
+        while (inicio)
+        {
+            System.Console.WriteLine("Com qual letra deseja começar? (X ou O)");
+            var escolhaLetra = Console.ReadLine();
+
+            if (escolhaLetra == "x" || escolhaLetra == "X")
+            {
+                fila.Enqueue("X");
+                fila.Enqueue("O");
+                fila.Enqueue("X");
+                fila.Enqueue("O");
+                fila.Enqueue("X");
+                fila.Enqueue("O");
+                fila.Enqueue("X");
+                fila.Enqueue("O");
+                fila.Enqueue("X");
+                inicio = false;
+            }
+            else if (escolhaLetra == "o" || escolhaLetra == "O")
+            {
+                fila.Enqueue("O");
+                fila.Enqueue("X");
+                fila.Enqueue("O");
+                fila.Enqueue("X");
+                fila.Enqueue("O");
+                fila.Enqueue("X");
+                fila.Enqueue("O");
+                fila.Enqueue("X");
+                fila.Enqueue("O");
+                inicio = false;
+            }
+            else
+            {
+                System.Console.WriteLine("Letra inválida, tente novamente. ");
+                inicio = true;
+
+            }
+        }
+        System.Console.WriteLine("   [0]    [1]    [2]");
+        System.Console.WriteLine("[0]     |     |     ");
+        System.Console.WriteLine("----------------------");
+        System.Console.WriteLine("[1]     |     |      ");
+        System.Console.WriteLine("----------------------");
+        System.Console.WriteLine("[2]     |     |      ");
+
+
+        for (int i = 0; i < 9; i++)
+        {
+            var escolhaLinha = 0;
+            var escolhaColuna = 0;
+            pergunta = true;
+            while (pergunta)
+            {
+                System.Console.WriteLine($"Turno jogador: {fila.Peek()}");
+                System.Console.Write("Qual linha deseja jogar?\n");
+                escolhaLinha = int.Parse(Console.ReadLine());
+                System.Console.Write("Qual coluna deseja jogar?\n");
+                escolhaColuna = int.Parse(Console.ReadLine());
+
+                if (escolhaLinha >= 3 && escolhaColuna >= 3)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    System.Console.WriteLine("Essas coordenadas não existem.\n");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else if (escolhaColuna >= 3)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    System.Console.WriteLine("Essa coluna não existe.\n");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else if (escolhaLinha >= 3)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    System.Console.WriteLine("Essa linha não existe.\n");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else
+                {
+
+                    if (jogoVelha[escolhaLinha, escolhaColuna] != null)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        System.Console.WriteLine("Local já ocupado.\n");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else
+                    {
+                        pergunta = false;
+                    }
+                }
+
+            }
+
+
+            jogoVelha[escolhaLinha, escolhaColuna] = Convert.ToString(fila.Peek());
+            fila.Dequeue();
+
+            System.Console.WriteLine("     [0]     [1]     [2]");
+            System.Console.WriteLine($"[0] {jogoVelha[0, 0]}    |  {jogoVelha[0, 1]}   |  {jogoVelha[0, 2]}   ");
+            System.Console.WriteLine("----------------------");
+            System.Console.WriteLine($"[1] {jogoVelha[1, 0]}    |   {jogoVelha[1, 1]}  | {jogoVelha[1, 2]}     ");
+            System.Console.WriteLine("----------------------");
+            System.Console.WriteLine($"[2]  {jogoVelha[2, 0]}   |  {jogoVelha[2, 1]}   |   {jogoVelha[2, 2]}   ");
+            var tempo = DateTime.Now;
+            System.Console.WriteLine($"Horario da jogada: {tempo.ToString("HH:mm:ss")}\n");
+
+        }
+
+    }
+}
