@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
+    {
+        var listaNumeros = new LinkedList<string>();
+
+        listaNumeros.AddLast("1");
+        listaNumeros.AddLast("4");
+        listaNumeros.AddLast("2");
+        listaNumeros.AddLast("3");
+
+        var numero1 = listaNumeros.Find("1");
+        listaNumeros.Remove(numero1);
+        listaNumeros.AddFirst(numero1);
+
+        var numero2 = listaNumeros.Find("2");
+        listaNumeros.Remove(numero2);
+        listaNumeros.AddAfter(numero1, numero2);
+
+        var numero3 = listaNumeros.Find("3");
+        listaNumeros.Remove(numero3);
+        listaNumeros.AddAfter(numero2, numero3);
+
+        var numero4 = listaNumeros.Find("4");
+        listaNumeros.Remove(numero4);
+        listaNumeros.AddAfter(numero3, numero4);
+
+        for (var node = listaNumeros.First; node != null; node = node.Next)
+        {
+            Console.WriteLine(node.Value);
+        }
+    }
+}
+
