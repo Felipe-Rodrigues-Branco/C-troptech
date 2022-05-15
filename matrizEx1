@@ -1,0 +1,29 @@
+using System;
+
+namespace estruturadedados2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[,] agenda = new string[10, 3];
+            for (int linha = 0; linha < 10; linha++)
+            {
+                for (int coluna = 0; coluna < 3; coluna++)
+                {
+                    Console.Write(string.Format("Digite seu nome: {0}, seu endereço {0} e sua profissão {0} ", linha, coluna));
+                    agenda[linha, coluna] = Console.ReadLine();
+                }
+
+            }
+            for (int linhaPreenchida = 0; linhaPreenchida < 10; linhaPreenchida++)
+            {
+                for (int colunaPreenchida = 0; colunaPreenchida < 3; colunaPreenchida++)
+                {
+                    Console.WriteLine(string.Format("Nome: {0} na linha {1} e na coluna {2} ", agenda[linhaPreenchida, colunaPreenchida], linhaPreenchida, colunaPreenchida));
+                }
+            }
+
+        }
+    }
+}
