@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	public static void Main()
+	{
+		var listaDiasSemana = new LinkedList<string>();
+
+		listaDiasSemana.AddLast("Quarta");
+		listaDiasSemana.AddLast("Segunda");
+		listaDiasSemana.AddLast("Sábado");
+		listaDiasSemana.AddLast("Quinta");
+		listaDiasSemana.AddLast("Terça");
+		listaDiasSemana.AddLast("Domingo");
+		listaDiasSemana.AddLast("Sexta");
+
+		var domingo = listaDiasSemana.Find("Domingo");
+		listaDiasSemana.Remove(domingo);
+		listaDiasSemana.AddFirst(domingo);
+
+		var segunda = listaDiasSemana.Find("Segunda");
+		listaDiasSemana.Remove(segunda);
+		listaDiasSemana.AddAfter(domingo, segunda);
+
+		var terca = listaDiasSemana.Find("Terça");
+		listaDiasSemana.Remove(terca);
+		listaDiasSemana.AddAfter(segunda, terca);
+
+		var quarta = listaDiasSemana.Find("Quarta");
+		listaDiasSemana.Remove(quarta);
+		listaDiasSemana.AddAfter(terca, quarta);
+
+		var quinta = listaDiasSemana.Find("Quinta");
+		listaDiasSemana.Remove(quinta);
+		listaDiasSemana.AddAfter(quarta, quinta);
+
+		var sexta = listaDiasSemana.Find("Sexta");
+		listaDiasSemana.Remove(sexta);
+		listaDiasSemana.AddAfter(quinta, sexta);
+
+		var sabado = listaDiasSemana.Find("Sábado");
+		listaDiasSemana.Remove(sabado);
+		listaDiasSemana.AddAfter(sexta, sabado);
+
+		for(var node = listaDiasSemana.First; node != null; node = node.Next){
+			Console.WriteLine(node.Value);
+		}
+	}
+}
