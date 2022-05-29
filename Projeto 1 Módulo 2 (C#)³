@@ -1,0 +1,76 @@
+using System;
+
+namespace Projeto1
+{
+    public static class Sistema
+    {
+        public static void Enfilerar(Fila fila)
+        {
+            Console.Write("Digite o item a ser inserido na fila: ");
+            var itemParaInserir = Int16.Parse(Console.ReadLine());
+
+            if (itemParaInserir <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Valor inválido, tente novamente!");
+                Console.ForegroundColor = ConsoleColor.White; 
+
+                return;
+            }
+
+            fila.Enfilerar(itemParaInserir);
+            Console.WriteLine($"Agora existem {fila.Quantidade} na fila.");
+        }
+
+        public static void Desenfilerar(Fila fila)
+        {
+             if(fila.Quantidade == 0){
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Fila está vazia, não há itens para desenfilerar.");
+                Console.ForegroundColor = ConsoleColor.White;
+
+                return;
+            }
+
+
+            var item = fila.Desenfilerar();
+            Console.WriteLine($"O item desenfilerado é: {item}");
+            Console.WriteLine($"Agora existem {fila.Quantidade} na fila.");
+        }
+
+        public static void VerTopo(Fila fila)
+        {
+            if(fila.Quantidade == 0){
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Fila está vazia!");
+                Console.ForegroundColor = ConsoleColor.White;
+
+                return;
+            }
+
+            Console.WriteLine($"{fila.Topo}"); 
+        }
+
+        public static void LimparFila(Fila fila)
+        {
+            fila.LimparFila();
+            Console.WriteLine($"Agora existem {fila.Quantidade} itens na fila." );
+        }
+
+        public static void ChecarItem(Fila fila)
+        {
+            Console.Write("Digite o item para verificar se existe na fila: ");
+            var valorDigitado = Int16.Parse(Console.ReadLine());
+            var existe = fila.ExisteItem(valorDigitado);
+
+            if (existe)
+            {
+                Console.WriteLine($"O valor '{valorDigitado}' existe na fila ");
+                return;
+            }
+
+            Console.WriteLine($"O valor '{valorDigitado}' não existe na fila ");
+        }
+    }
+}
