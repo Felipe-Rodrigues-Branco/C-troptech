@@ -1,0 +1,51 @@
+using System;
+
+namespace Projeto1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string resposta = "";
+            Fila fila = new Fila();
+             while (resposta != "6")
+             {
+            Console.WriteLine("[1] Entrar na fila \n[2] Remover da fila \n[3] Ver quem está na vez \n[4] Checar item \n[5] Limpar \n[6] Sair");
+            resposta = Console.ReadLine();
+                Console.Clear();
+
+                switch (resposta) 
+                {
+                    case "1":
+                        Sistema.Enfilerar(fila);
+                        Console.ReadKey();
+                        break;
+                    case "2":
+                        Sistema.Desenfilerar(fila);
+                        Console.ReadKey();
+                        break;
+                    case "3":
+                        Sistema.VerTopo(fila);
+                        Console.ReadKey();
+                        break;
+                    case "4":
+                        Sistema.ChecarItem(fila);
+                        Console.ReadKey();
+                        break;
+                    case "5":
+                        Sistema.LimparFila(fila);
+                        Console.ReadKey();
+                        break;
+                    default:
+                        break;
+                }
+                Console.Clear();
+             
+             }
+        
+        
+        
+        }
+
+    }
+}
