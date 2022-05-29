@@ -1,0 +1,80 @@
+using System;
+namespace Projeto1
+{
+    public class Fila
+    {
+         private int[] _fila;
+
+        public int Quantidade
+        {
+            get { return _fila.Length; }
+        }
+
+        public int Topo
+        {
+            get { return BuscarPrimeiroItem(); }
+        }
+
+        public Fila()
+        {
+            _fila = new int[0];
+        }
+
+        public void Enfilerar(int item)
+        {
+            AumentarFila();
+
+            _fila[_fila.Length - 1] = item;
+        }
+
+        public int Desenfilerar()
+        {
+            return DiminuirFila();
+        }
+
+        public void LimparFila()
+        {
+            _fila = new int[0];
+        }
+
+        public bool ExisteItem(int item)
+        {
+            for (int i = 0; i < _fila.Length; i++)
+                if (_fila[i] == item)
+                    return true;
+
+            return false;
+        }
+
+        private int BuscarPrimeiroItem()
+        {
+            if (_fila.Length < 1)
+                return 0;
+
+            return _fila[0];
+        }
+
+        private void AumentarFila()
+        {
+            var aumentar = _fila;
+            _fila = new int[_fila.Length + 1];
+
+            for (int i = 0; i < aumentar.Length; i++)
+                _fila[i] = aumentar[i];
+        }
+
+        private int DiminuirFila()
+        {
+            if (_fila.Length < 1)
+                return 0;
+
+            var diminuir = _fila;
+            _fila = new int[_fila.Length - 1];
+
+            for (int i = 0; i < _fila.Length; i++)
+                _fila[i] = diminuir[i+1];
+
+            return diminuir[0]; 
+        }
+    } 
+}
