@@ -1,0 +1,243 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+    
+	  const string login = "aluno";
+            const string senha = "teste123";
+            const string sair = "5";
+            const string voltar = "2";
+             int tentaivaL = 3;
+			string opcaoEsco = "";
+            string subMenu = "";
+			for (i = 0 ; i < tentativaL; i++)
+			{
+				Console.ForegroundColor = ConsoleColor.Blue;
+				Console.WriteLine("-=-=-=Login-=-=-=");
+				Console.ForegroundColor = ConsoleColor.White
+
+				Console.Write("Digite o login: ");
+				var loginSetado = Console.readLine();
+
+				Console.Write("Digite sua senha: ");
+				var senhaSetada = Console.readLine();
+				
+				Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine(" =-=-=-=-=-=-=-=-=-=-=-= ");
+                Console.ForegroundColor = ConsoleColor.White;
+
+				if(login == loginSetado && senhaSetada == senha)
+				{
+					while (opcaoEsco != sair)
+				{Console.Clear();
+                        Console.WriteLine(" -=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-= ");
+                        Console.WriteLine($" Usuário: {login}");
+                        Console.WriteLine(" -=-=-=-=-=-=-= Menu -=-=-=-=-=-=-= ");
+                        Console.WriteLine(" Escolha algumas das opções abaixo:");
+                        Console.WriteLine(" (1) Soma");
+                        Console.WriteLine(" (2) Subtração");
+                        Console.WriteLine(" (3) Divisão");
+                        Console.WriteLine(" (4) Multiplicação");
+                        Console.WriteLine(" (5) Sair");
+                        Console.WriteLine(" -=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-= ");
+                        Console.Write("=> ");
+
+						 opcaoEsco = Console.ReadLine();
+
+						 switch (opcaoEsco)
+                        {
+                            case "1":
+                                var soma = "+";
+                                while (subMenu != voltar)
+                                {
+                                    
+                                    Console.Clear();
+                                    Console.WriteLine(" -=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-==--=-= ");
+                                    Console.WriteLine($" Usuário: {login}");
+                                    Console.WriteLine($" -=-=-=-=-=-=-=-= Operação: {soma} -=-=-=-=-=-=-=-= ");
+                                    Console.WriteLine("  Digite o primeiro número:");
+                                    Console.Write("  => ");
+                                    double primeiroNumero = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("  Digite o segundo número:");
+                                    Console.Write("  => ");
+                                    double segundoNumero = Convert.ToDouble(Console.ReadLine());
+
+                                    double resultado = primeiroNumero + segundoNumero;
+
+                                    Console.WriteLine($"  RESULTADO: {primeiroNumero} + {segundoNumero} = {resultado}");
+                                    Console.WriteLine(" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ");
+                                    Console.WriteLine("  Pressione ENTER para continuar. ");
+                                    Console.ReadKey();
+
+                                    Console.Clear();
+                                    Console.WriteLine(" -=-==-=-==-=-====-=-=-=-==-=-=-=--=-=- ");
+                                    Console.WriteLine($" Usuário: {login}");
+                                    Console.WriteLine($" -=-=-=-=-==-=-=- Operação: {soma} -=-=-=-=-==-=-=- ");
+                                    Console.WriteLine(" Escolha algumas das opções abaixo:");
+                                    Console.WriteLine(" (1) - Refazer");
+                                    Console.WriteLine(" (2) - Voltar até operações");
+                                    Console.WriteLine(" -=-==-=-==-=-====-=-=-=-==-=-=-=--=-=- ");
+                                    Console.Write("=> ");
+                                    subMenu = Console.ReadLine();
+                                break;
+								}
+                                
+                            case "2":
+                                var subtracao = "-";
+                                while (subMenu != voltar)
+                                {
+                                    
+                                    Console.Clear();
+                                    Console.WriteLine(" -=-==-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=- ");
+                                    Console.WriteLine($" Usuário: {login}");
+                                    Console.WriteLine($"-=-=-=-=-=-=-= Operação: {subtracao} -=-=-=-=-=-=-= ");
+                                    Console.WriteLine("  Digite o primeiro número:");
+                                    Console.Write("  => ");
+                                    double primeiroNumero = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("  Digite o segundo número:");
+                                    Console.Write("  => ");
+                                    double segundoNumero = Convert.ToDouble(Console.ReadLine());
+
+                                    double resultado = primeiroNumero - segundoNumero;
+
+                                    Console.WriteLine($"  RESULTADO: {primeiroNumero} - {segundoNumero} = {resultado}");
+                                    Console.WriteLine(" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- ");
+                                    Console.WriteLine("  Pressione ENTER para continuar. ");
+                                    Console.ReadKey();
+
+                                    Console.WriteLine(" -=-==-=-==-=-====-=-=-=-==-=-=-=--=-=- ");
+                                    Console.WriteLine($" Usuário: {login}");
+                                    Console.WriteLine($" -=-=-=-=-==-=-=- Operação: {subtracao} -=-=-=-=-==-=-=- ");
+                                    Console.WriteLine(" Escolha algumas das opções abaixo:");
+                                    Console.WriteLine(" (1) - Refazer");
+                                    Console.WriteLine(" (2) - Voltar até operações");
+                                    Console.WriteLine(" -=-==-=-==-=-====-=-=-=-==-=-=-=--=-=- ");
+                                    Console.Write("=> ");
+                                    subMenu = Console.ReadLine();
+                               break;
+							    }
+                                
+
+                            case "3":
+                                var divisao = "/";
+                                while (subMenu != voltar)
+                                {
+                                    
+                                    Console.Clear();
+                                    Console.WriteLine(" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- ");
+                                    Console.WriteLine($" Usuário: {login}");
+                                    Console.WriteLine($" -=-=-=-==-=-=-=-=-= Operação: {divisao} -=-=-=-==-=-=-=-=-= ");
+                                    Console.WriteLine("  Digite o primeiro número:");
+                                    Console.Write("  => ");
+                                    double primeiroNumero = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("  Digite o segundo número:");
+                                    Console.Write("  => ");
+                                    double segundoNumero = Convert.ToDouble(Console.ReadLine());
+
+                                    double resultado = primeiroNumero / segundoNumero;
+
+                                    Console.WriteLine($"  RESULTADO: {primeiroNumero} / {segundoNumero} = {resultado}");
+                                    Console.WriteLine(" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ");
+                                    Console.WriteLine("  Pressione ENTER para continuar. ");
+                                    Console.ReadKey();
+                                    Console.Clear();
+
+                                  Console.WriteLine(" -=-==-=-==-=-====-=-=-=-==-=-=-=--=-=- ");
+                                    Console.WriteLine($" Usuário: {login}");
+                                    Console.WriteLine($" -=-=-=-=-==-=-=- Operação: {divisao} -=-=-=-=-==-=-=- ");
+                                    Console.WriteLine(" Escolha algumas das opções abaixo:");
+                                    Console.WriteLine(" (1) - Refazer");
+                                    Console.WriteLine(" (2) - Voltar até operações");
+                                    Console.WriteLine(" -=-==-=-==-=-====-=-=-=-==-=-=-=--=-=- ");
+                                    Console.Write("=> ");
+                                    subMenu = Console.ReadLine();
+                               break;
+							    }
+                                
+                            case "4":
+                                var multiplicacao = "x";
+                                while (subMenu != voltar)
+                                {
+                                   
+                                    Console.Clear();
+                                    Console.WriteLine(" -=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- ");
+                                    Console.WriteLine($" Usuário: {login}");
+                                    Console.WriteLine($" -=-=-=-=-=-= OPeração: {multiplicacao} -=-=-=-=-=-= ");
+                                    Console.WriteLine("  Digite o primeiro número:");
+                                    Console.Write("  => ");
+                                    double primeiroNumero = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("  Digite o segundo número:");
+                                    Console.Write("  => ");
+                                    double segundoNumero = Convert.ToDouble(Console.ReadLine());
+
+                                    double resultado = primeiroNumero * segundoNumero;
+
+                                    Console.WriteLine($"  RESULTADO: {primeiroNumero} x {segundoNumero} = {resultado}");
+                                    Console.WriteLine(" =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-= ");
+                                    Console.WriteLine("  Pressione ENTER para continuar. ");
+                                    Console.ReadKey();
+
+                                    Console.Clear();
+                                    
+									Console.WriteLine(" -=-==-=-==-=-====-=-=-=-==-=-=-=--=-=- ");
+                                    Console.WriteLine($" Usuário: {login}");
+                                    Console.WriteLine($" -=-=-=-=-==-=-=- Operação: {multiplicacao} -=-=-=-=-==-=-=- ");
+                                    Console.WriteLine(" Escolha algumas das opções abaixo: ");
+                                    Console.WriteLine(" (1) - Refazer");
+                                    Console.WriteLine(" (2) - Voltar até operações");
+                                    Console.WriteLine(" -=-==-=-==-=-====-=-=-=-==-=-=-=--=-=- ");
+                                    Console.Write("=> ");
+                                    subMenu = Console.ReadLine();
+                               break;
+							   }
+                                
+                            case "5":
+                                Console.Clear();
+                                return;
+                            default:
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("Opção inválida, digite um valor válido. ");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.ReadKey();
+                                break;
+                        }
+                        subMenu = "0";
+                        
+                    }
+                }
+                else if (senha != senhaSetada && login != loginSetado)  
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Login e senha estão incorretos. ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else if (login != loginSetado) 
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Login incorreto. ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else 
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Senha incorreta. ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+
+                if (tentativaL < 1) 
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Você excedeu o número de tentativas, tente novamente mais tarde. ");
+                    Console.ReadKey();
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+            }
+
+        }
+    }
